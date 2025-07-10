@@ -1,0 +1,386 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #8c4600; /* Darker shade */
+  background: linear-gradient(to right, #f58514, #aa763e); /* Darker gradient */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  background-color: #fff7e6;
+  border-radius: 150px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 700px;
+}
+
+.container p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  margin: 20px 0;
+}
+
+.container span {
+  font-size: 12px;
+}
+
+.container a {
+  color: #4b2e2e;
+  font-size: 13px;
+  text-decoration: none;
+  margin: 15px 0 10px;
+}
+
+/* .container .signupbtn .signupbtn {
+  background-color: #ff7300;
+  color: #fff;
+  padding: 10px 45px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.container .signupbtn .signupbtn {
+  background-color: transparent;
+  border-color: #fff;
+} */
+
+.signup-btn, .signinbtn {
+  background-color: #ff7300;
+  color: #fff;
+  padding: 10px 45px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(255, 115, 0, 0.3); /* Added shadow */
+}
+
+.signup-btn:hover, .signinbtn:hover {
+  background-color: #ff9400;
+  box-shadow: 0px 6px 12px rgba(255, 148, 0, 0.5); /* Hover shadow */
+}
+
+.container form {
+  background-color: #fff7e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  height: 100%;
+}
+
+.container input {
+  background-color: #ffebcc;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+
+.sign-up, .sign-in {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-in {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.container.active .sign-in {
+  transform: translateX(100%);
+}
+
+.sign-up {
+  left: 0;
+  width: 50%;
+  z-index: 1;
+  opacity: 0;
+}
+
+.container.active .sign-up {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: move 0.6s;
+}
+
+@keyframes move {
+  0%, 49.99%{
+    opacity: 0;
+    z-index: 1;
+  }
+   50%, 100%{
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.icons .googlebtn {
+  max-width: 320px;
+  display: flex;
+  padding: 0.5rem 1.4rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  gap: 0.75rem;
+  color: rgb(65, 63, 63);
+  background-color: #fff;
+  cursor: pointer;
+  transition: all .6s ease;
+}
+
+.icons .googlebtn svg {
+  height: 24px;
+}
+
+.icons .googlebtn:hover {
+  transform: scale(1.02);
+}
+
+.toogle-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 150px;
+  z-index: 1000;
+  transition: all 0.6s ease-in-out;
+}
+
+.container.active .toogle-container {
+  transform: translateX(-100%);
+  border-radius: 150px;
+}
+
+.toogle {
+  background-color: #ff9400;
+  height: 100%;
+  background: linear-gradient(to right, #eb9c2d, #ebaf39);
+  color: #fff;
+  position: relative;
+  left: -100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+.container.active .toogle {
+  transform: translateX(50%);
+}
+
+.toogle-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 30px;
+  text-align: center;
+  top: 0;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+.toogle-left {
+  transform: translateX(-200%);
+}
+
+.container.active .toogle-left {
+  transform: translateX(0);
+}
+
+.toogle-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.active .toogle-right {
+  transform: translateX(200%);
+}
+
+.toogle-panel img {
+  width: 100px; 
+  height: auto; 
+  display: block;  
+  margin: 10px auto;  
+}
+
+.hiddenbtn {
+  font-family: 'Ropa Sans', sans-serif;
+  color: #4b2e2e;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+  border: 1px solid #4b2e2e;
+  padding: 0.6rem 1.8rem;
+  background-color: #ffcc66;
+  transition: 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.hiddenbtn:hover {
+  border: 1px solid #663300;
+  color: #fff;
+  background-color: #ff9400;
+}
+
+.button-borders {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
+
+.button-borders:before {
+  content: "";
+  position: absolute;
+  width: calc(100% + 0.5em);
+  height: 50%;
+  left: -0.3em;
+  top: -0.3em;
+  border: 1px solid #4b2e2e;
+  border-bottom: 0px;
+}
+
+.button-borders:after {
+  content: "";
+  position: absolute;
+  width: calc(100% + 0.5em);
+  height: 50%;
+  left: -0.3em;
+  bottom: -0.3em;
+  border: 1px solid #4b2e2e;
+  border-top: 0px;
+  z-index: 0;
+}
+
+.shape {
+  fill: #f6f6f7;
+}
+
+/* Container styles for the email and verification sections */
+#verification-code {
+  background-color: #ffebcc;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+  display: inline-block; /* Ensuring it's inline with timer */
+}
+
+/* Styling for the clickable texts below input fields */
+#send-code-msg,
+#verify-msg {
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue;
+  font-size: 10px; /* Small font size */
+  margin-top: 3px;
+}
+
+#send-code-msg {
+  display: none; /* Initially hidden */
+  font-size: 10px; /* Small font size */
+  color: blue;
+  margin-left: auto;
+}
+
+#verify-msg {
+  display: none; /* Initially hidden */
+  font-size: 10px; /* Small font size */
+  color: blue;
+  cursor: pointer;
+}
+
+/* Styling for the verification status message */
+#verification-status {
+  display: none; /* Initially hidden */
+  font-size: 10px; /* Small font size */
+  margin-top: 1px;
+  font-weight: normal;
+  margin-left: 50%;
+}
+
+/* Success and error styles for verification status */
+#verification-status.success {
+  color: green; /* Success status color */
+}
+
+#verification-status.error {
+  color: rgb(8, 8, 8); /* Error status color */
+}
+
+/* Positioning for verification input and status */
+#verification-section {
+  display: none; /* Initially hidden */
+}
+
+#verification-code {
+  margin-bottom: 3px;
+}
+
+#verification-status {
+  font-size: 12px; /* Small font size */
+  text-align: left; /* Left aligned */
+}
+
+/* Timer specific styles */
+#time-left {
+  font-weight: lighter;
+  font-size: 12px;
+  color: black;
+  margin-left: 5px;
+  text-align: right; /* Aligning timer to the right side */
+  display: inline-block; /* Ensuring it's inline with verification code */
+}
+
+/* Ensuring position below inputs */
+#verification-section p,
+#send-code-msg,
+#verify-msg {
+  margin-top: 0.9px;
+}

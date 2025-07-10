@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./assests/education.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="crossorigin="anonymous"referrerpolicy="no-referrer"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"rel="stylesheet"/>
+    <title>Login Page</title>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="sign-up">
+        <form>
+          <h1>Create Account</h1>
+          <div class="icons">
+            <button type="button" class="googlebtn" onclick="googleSignIn()">
+              <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 262">
+              <path fill="#4285F4" d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"></path>
+              <path fill="#34A853" d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055-34.523 0-63.824-22.773-74.269-54.25l-1.531.13-40.298 31.187-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"></path>
+              <path fill="#FBBC05" d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82 0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602l42.356-32.782"></path>
+              <path fill="#EB4335" d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0 79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"></path>
+            </svg>
+              Continue with Google
+            </button>
+          </div>
+          <span>or use email for registeration</span>
+          <input type="text" placeholder="Full Name" />
+          <!-- Email Input -->
+          <input type="email" id="email" placeholder="Email" required>
+          
+          <!-- Clickable Text to Send Code -->
+          <p id="send-code-msg">Send verification code</p>
+          
+          <!-- Verification Section (Hidden Initially) -->
+          <div id="verification-section" style="display: none;">
+              <input type="text" id="verification-code" placeholder="Enter 6-digit Code" maxlength="6">
+              <p id="verify-msg">Verify the code</p>
+              <p id="verification-status"></p>
+          </div>
+          
+          <input type="password" placeholder="Create Password" />
+          <input type="password" placeholder="Verify Password" />
+         <!-- <input type="date" placeholder="Date of Birth" /-->
+          <!--<input type="tel" placeholder="Phone Number" /-->
+
+          <!-- Signup Button (Initially Disabled) -->
+          <button type="submit" class="signup-btn" disabled>Sign Up</button>
+        </form>
+      </div>
+      <div class="sign-in">
+        <form>
+          <h1>Sign In</h1>
+          <div class="icons">
+            <button type="button" class="googlebtn" onclick="googleSignIn()">
+              <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 262">
+              <path fill="#4285F4" d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"></path>
+              <path fill="#34A853" d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055-34.523 0-63.824-22.773-74.269-54.25l-1.531.13-40.298 31.187-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"></path>
+              <path fill="#FBBC05" d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82 0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602l42.356-32.782"></path>
+              <path fill="#EB4335" d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0 79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"></path>
+            </svg>
+              Continue with Google
+            </button>
+          </div>
+          <span>or use email password</span>
+          <input type="text" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <a href="#">Forgot password?</a>
+          <button type="submit" class="signinbtn">Sign In</button>
+        </form>
+      </div>
+      <div class="toogle-container">
+        <div class="toogle">
+          <div class="toogle-panel toogle-left">
+            <img src="./assests/cap.png" alt="Cap"/>
+            <h1>SKILL SPREE</h1>
+            <h4>SIMPLY AHEAD</h4>
+            <p>If you already have an account?</p>
+            <div class="button-borders">
+              <button class="hiddenbtn" id="login">Sign In</button>
+            </div>
+          </div>
+          <div class="toogle-panel toogle-right">
+            <img src="./assests/cap.png" alt="Cap"/>
+            <h1>SKILL SPREE</h1>
+            <h4>SIMPLY AHEAD</h4>
+            <p>If you don't have an account?</p>
+            <div class="button-borders">
+                <button class="hiddenbtn" id="register">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
