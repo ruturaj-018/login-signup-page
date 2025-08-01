@@ -13,9 +13,9 @@
 
 ## 🌟 Overview
 
-**SKILL SPREE** is a cutting-edge authentication UI template featuring a stunning sliding panel design and Google OAuth integration placeholder. Originally created as a template component for the larger SKILL SPREE educational platform project, this standalone UI demonstrates modern web design principles enhanced with AI-powered design decisions. Perfect foundation for educational platforms, SaaS applications, or any project requiring elegant user authentication interfaces.
+This **template ** is a cutting-edge authentication UI template featuring a stunning sliding panel design and Google OAuth integration placeholder. Originally created as a template component for the larger SKILL SPREE educational platform project, this standalone UI demonstrates modern web design principles enhanced with AI-powered design decisions. Perfect foundation for educational platforms, SaaS applications, or any project requiring elegant user authentication interfaces.
 
-### 🎯 Why Choose SKILL SPREE?
+### 🎯 Why to use ?
 
 - **🎨 Modern Design Language**: Warm orange gradient themes with smooth animations
 - **📱 Fully Responsive**: Looks perfect on desktop, tablet, and mobile devices  
